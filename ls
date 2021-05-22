@@ -11,8 +11,8 @@ const main = (argv) => {
   if (typeof argv[0] === 'undefined') {
     var rd = fs.readdirSync(".");
     for (const fod of rd) {
-      var stats = fs.statSync(fod);
       try {
+        var stats = fs.statSync(fod);
         if (stats.isFile() === true) {
           console.log(`${emojis.file} ${fod}`.yellow);
         } else {
@@ -25,8 +25,8 @@ const main = (argv) => {
   } else {
     var rd = fs.readdirSync(argv[0]);
     for (const fod of rd) {
-      var stats = fs.statSync(`${argv[0]}/${fod}`);
       try {
+        var stats = fs.statSync(`${argv[0]}/${fod}`);
         if (stats.isFile() === true) {
           console.log(`${emojis.file} ${fod}`.yellow);
         } else {
