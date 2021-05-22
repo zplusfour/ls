@@ -2,7 +2,7 @@
 
 ![preview](ls-screenshot.jpg)
 
-its lightweight and fast
+it's lightweight and fast
 
 ## Requirements:
 * nodejs
