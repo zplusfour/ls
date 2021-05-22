@@ -12,21 +12,30 @@ const main = (argv) => {
     var rd = fs.readdirSync(".");
     for (const fod of rd) {
       var stats = fs.statSync(fod);
-      if (stats.isFile() === true) {
-        console.log(`${emojis.file} ${fod}`.yellow);
-      } else {
-        console.log(`${emojis.directory} ${fod}`.blue);
+      try {
+        if (stats.isFile() === true) {
+          console.log(`${emojis.file} ${fod}`.yellow);
+        } else {
+          console.log(`${emojis.directory} ${fod}`.blue);
+        }
+      } catch (e) {
+        console.log(`${e.message}`);
       }
     }
   } else {
     var rd = fs.readdirSync(argv[0]);
     for (const fod of rd) {
       var stats = fs.statSync(`${argv[0]}/${fod}`);
-      if (stats.isFile() === true) {
-        console.log(`${emojis.file} ${fod}`.yellow);
-      } else {
-        console.log(`${emojis.directory} ${fod}`.blue);
+      try {
+        if (stats.isFile() === true) {
+          console.log(`${emojis.file} ${fod}`.yellow);
+        } else {
+          console.log(`${emojis.directory} ${fod}`.blue);
+        }
+      } catch (e) {
+        console.log(`${e.message}`)
       }
+      
     }
 
   }
